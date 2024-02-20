@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- expense_manager.fxml -->
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+
+<StackPane xmlns="http://javafx.com/javafx"
+           xmlns:fx="http://javafx.com/fxml"
+           fx:controller="com.example.demo.ExpenseController">
+
+    <VBox spacing="10">
+        <Label text="Gestion des dépenses" styleClass="title-label"/>
+        <TableView fx:id="expenseTable" styleClass="expense-table">
+            <columns>
+                <TableColumn text="Période" prefWidth="100">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="periode"/>
+                    </cellValueFactory>
+                </TableColumn>
+                <TableColumn text="Total" prefWidth="100">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="total"/>
+                    </cellValueFactory>
+                </TableColumn>
+                <TableColumn text="Logement" prefWidth="100">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="logement"/>
+                    </cellValueFactory>
+                </TableColumn>
+                <TableColumn text="Nourriture" prefWidth="100">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="nourriture"/>
+                    </cellValueFactory>
+                </TableColumn>
+                <TableColumn text="Sorties" prefWidth="100">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="sorties"/>
+                    </cellValueFactory>
+                </TableColumn>
+                <TableColumn text="Voiture/Transport" prefWidth="100">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="voitureTransport"/>
+                    </cellValueFactory>
+                </TableColumn>
+                <TableColumn text="Voyage" prefWidth="100">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="voyage"/>
+                    </cellValueFactory>
+                </TableColumn>
+                <TableColumn text="Impôts" prefWidth="100">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="impots"/>
+                    </cellValueFactory>
+                </TableColumn>
+                <TableColumn text="Autres" prefWidth="100">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="autres"/>
+                    </cellValueFactory>
+                </TableColumn>
+            </columns>
+        </TableView>
+        <Button fx:id="clickButton" text="Cliquez ici !" onAction="#handleButtonClick" />
+    </VBox>
+</StackPane>

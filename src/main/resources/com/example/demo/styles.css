@@ -1,0 +1,19 @@
+.title-label {
+    -fx-font-size: 20px;
+    -fx-font-weight: bold;
+    -fx-background-color: blue;
+    -fx-padding: 10px;
+}
+
+.expense-table {
+    -fx-background-color: lightblue;
+    -fx-padding: 10px;
+}
+
+#clickButton {
+    -fx-background-color: #4CAF50; /* Green */
+    -fx-text-fill: white;
+    -fx-font-size: 20pt;
+    -fx-padding: 10px 20px;
+    -fx-margin: 10px; /* Ajout de marge autour du bouton */
+}
