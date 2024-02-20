@@ -1,18 +1,15 @@
 package com.example.demo;
 
 import javafx.fxml.FXML;
-import javafx.scene.control.*;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Button;
+import javafx.scene.control.TextField;
 import javafx.stage.Stage;
-
-import java.time.format.DateTimeFormatter;
 
 public class ExpenseDialogController {
 
     @FXML
     private TextField periodeField;
-
-    @FXML
-    private TextField totalField;
 
     @FXML
     private TextField logementField;
@@ -48,7 +45,6 @@ public class ExpenseDialogController {
         // Add listener to enable/disable validate button
         validateButton.disableProperty().bind(
                 periodeField.textProperty().isEmpty()
-                        .or(totalField.textProperty().isEmpty())
                         .or(logementField.textProperty().isEmpty())
                         .or(nourritureField.textProperty().isEmpty())
                         .or(sortiesField.textProperty().isEmpty())
@@ -88,9 +84,8 @@ public class ExpenseDialogController {
     private boolean validateFields() {
         // Implement validation logic for each field
         // For example, you can check if the fields are in the correct format (date + decimals)
-        // Here, we'll just check if they are not empty (assuming they are all required)
+        // Here, we'll just check if they are not empty and are valid decimals (non-negative)
         return !periodeField.getText().isEmpty()
-                && isValidDecimal(totalField.getText())
                 && isValidDecimal(logementField.getText())
                 && isValidDecimal(nourritureField.getText())
                 && isValidDecimal(sortiesField.getText())
@@ -111,5 +106,4 @@ public class ExpenseDialogController {
             return false;
         }
     }
-
 }

@@ -2,7 +2,6 @@
 <!-- expense_manager.fxml -->
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
-<?import javafx.geometry.*?>
 <?import javafx.scene.control.cell.PropertyValueFactory?>
 
 <StackPane xmlns="http://javafx.com/javafx"

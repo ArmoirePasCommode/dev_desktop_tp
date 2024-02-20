@@ -6,7 +6,12 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
-import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.stage.Modality;
+import javafx.stage.Stage;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import java.io.IOException;
+
 
 public class ExpenseController {
     @FXML
@@ -56,6 +61,27 @@ public class ExpenseController {
 
     @FXML
     private void handleButtonClick(ActionEvent event) {
-        System.out.println("Bouton cliqué !");
+        this.showExpenseDialog();
+    }
+    @FXML
+    private void showExpenseDialog() {
+        try {
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("expense_dialog.fxml"));
+            Parent root = fxmlLoader.load();
+
+            // Create a new stage for the dialog
+            Stage dialogStage = new Stage();
+            dialogStage.setTitle("Ajouter une dépense");
+            dialogStage.initModality(Modality.APPLICATION_MODAL);
+
+            // Set the scene with the loaded FXML root
+            Scene scene = new Scene(root);
+            dialogStage.setScene(scene);
+
+            // Show the dialog
+            dialogStage.showAndWait(); // This will wait until the dialog is closed
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }

@@ -2,8 +2,6 @@
 <!-- expense_dialog.fxml -->
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
-<?import javafx.geometry.*?>
-<?import javafx.scene.control.Alert?>
 
 <VBox xmlns="http://javafx.com/javafx"
       xmlns:fx="http://javafx.com/fxml"
@@ -14,21 +12,44 @@
     <Label text="Ajouter une dépense" styleClass="title-label"/>
 
     <GridPane alignment="CENTER" hgap="10" vgap="5">
-        <ColumnConstraints hgrow="NEVER" />
-        <ColumnConstraints hgrow="ALWAYS" />
-        <RowConstraints vgrow="NEVER" />
-        <RowConstraints vgrow="NEVER" />
-        <RowConstraints vgrow="NEVER" />
-        <RowConstraints vgrow="NEVER" />
-        <RowConstraints vgrow="NEVER" />
-        <RowConstraints vgrow="NEVER" />
-        <RowConstraints vgrow="NEVER" />
-        <RowConstraints vgrow="NEVER" />
-        <RowConstraints vgrow="NEVER" />
+        <columnConstraints>
+            <ColumnConstraints hgrow="NEVER" />
+            <ColumnConstraints hgrow="ALWAYS" />
+        </columnConstraints>
+        <rowConstraints>
+            <RowConstraints vgrow="NEVER" />
+            <RowConstraints vgrow="NEVER" />
+            <RowConstraints vgrow="NEVER" />
+            <RowConstraints vgrow="NEVER" />
+            <RowConstraints vgrow="NEVER" />
+            <RowConstraints vgrow="NEVER" />
+            <RowConstraints vgrow="NEVER" />
+            <RowConstraints vgrow="NEVER" />
+            <RowConstraints vgrow="NEVER" />
+            <RowConstraints vgrow="NEVER" />
+        </rowConstraints>
+        <Label text="Periode:" GridPane.rowIndex="1" GridPane.columnIndex="0" />
+        <Label text="Logement:" GridPane.rowIndex="2" GridPane.columnIndex="0" />
+        <Label text="Nourriture:" GridPane.rowIndex="3" GridPane.columnIndex="0" />
+        <Label text="Sorties:" GridPane.rowIndex="4" GridPane.columnIndex="0" />
+        <Label text="Voiture/Transport:" GridPane.rowIndex="5" GridPane.columnIndex="0" />
+        <Label text="Voyage:" GridPane.rowIndex="6" GridPane.columnIndex="0" />
+        <Label text="Impôts:" GridPane.rowIndex="7" GridPane.columnIndex="0" />
+        <Label text="Autres:" GridPane.rowIndex="8" GridPane.columnIndex="0" />
+        <TextField fx:id="periodeField" GridPane.rowIndex="1" GridPane.columnIndex="1" />
+        <TextField fx:id="logementField" GridPane.rowIndex="2" GridPane.columnIndex="1" />
+        <TextField fx:id="nourritureField" GridPane.rowIndex="3" GridPane.columnIndex="1" />
+        <TextField fx:id="sortiesField" GridPane.rowIndex="4" GridPane.columnIndex="1" />
+        <TextField fx:id="voitureTransportField" GridPane.rowIndex="5" GridPane.columnIndex="1" />
+        <TextField fx:id="voyageField" GridPane.rowIndex="6" GridPane.columnIndex="1" />
+        <TextField fx:id="impotsField" GridPane.rowIndex="7" GridPane.columnIndex="1" />
+        <TextField fx:id="autresField" GridPane.rowIndex="8" GridPane.columnIndex="1" />
+
+
     </GridPane>
 
     <HBox alignment="CENTER" spacing="10">
-        <Button text="Annuler" onAction="#cancel" />
-        <Button text="Valider" onAction="#validate" />
+        <Button fx:id="validateButton" text="Valider" onAction="#validate" />
     </HBox>
 </VBox>
+
